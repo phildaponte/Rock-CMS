@@ -1,5 +1,5 @@
 ---
-title: Helllo woot twoot
+title: Helllo wifi friend
 crap: Shoote them all
 layout: default
 ---
