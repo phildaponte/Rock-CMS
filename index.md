@@ -1,5 +1,5 @@
 ---
-title: Helllo wifi friend
+title: Helllo wifi dude
 crap: Shoote them all
 layout: default
 ---
