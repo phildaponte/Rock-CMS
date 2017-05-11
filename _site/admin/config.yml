@@ -1,19 +1,28 @@
 backend:
   name: github
-  repo: phildaponte/odemard # Path to your Github repository
+  repo: phildaponte/rock # Path to your Github repository
   branch: master # Branch to update
-
-media_folder: "/img/uploads" # Media files will be stored in the repo under images/uploads
+  
+media_folder: "/static/img"
+public_folder: "/dist/img"
 
 collections:
-  - name: "portfolio"
-    label: "Post"
-    folder: "src/html/content/posts"
+  - name: "blog" # Used in routes, e.g. /admin/collections/blog
+    label: "Blog" # Used in the UI
+    folder: "content/blog" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template i.e. YYYY-MM-DD-title.md
+    slug: "{{slug}}" # Filename template i.e. YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
-      - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Image", name: "thumbnail", widget: "image"}
+      - {label: "Draft", name: "draft", widget: "string", default: "true"}
+      - {label: "Type", name: "type", widget: "hidden", default: "blog"}
+      - {label: "Author", name: "author", widget: "string", default: "Jared"}
+      - {label: "Publish Date", name: "publishdate", widget: "datetime"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Tags", name: "tags", widget: "list"}
+      - {label: "Topics", name: "topics", widget: "list"}
+      - {label: "Keywords", name: "keywords", widget: "list"}
+      - {label: "Title", name: "title", widget: "string", pattern: [".{10,}", "Should have more than 30 characters and less than 160"]}
+      - {label: "Description", name: "description", widget: "text", pattern: [".{30,160}", "Should have more than 30 characters and less than 160"]}
+      - {label: "Featured Image", name: "image", widget: "image", required: false}
+      - {label: "Image Alt", name: "image_alt", widget: "string", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
