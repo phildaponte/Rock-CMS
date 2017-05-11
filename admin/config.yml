@@ -7,15 +7,16 @@ media_folder: "/img/uploads" # Media files will be stored in the repo under imag
 
 collections:
   - name: "portfolio"
-    label: "Post"
-    folder: "src/html/content/posts"
+    label: "Item Portfolio"
+    folder: "_posts"
     create: true # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template i.e. YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
       - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
       - {label: "Title", name: "title", widget: "string"}
+      - {label: "TNameId", name: "modalID", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Image", name: "thumbnail", widget: "image"}
+      - {label: "Thumbnail", name: "img", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}
 
 
