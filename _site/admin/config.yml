@@ -3,6 +3,8 @@ backend:
   repo: phildaponte/rock # Path to your Github repository
   branch: master # Branch to update
 
+publish_mode: editorial_workflow
+
 media_folder: "/img/uploads" # Media files will be stored in the repo under images/uploads
 
 collections:
@@ -15,8 +17,9 @@ collections:
       - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "TNameId", name: "modalID", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Thumbnail", name: "img", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}
+    meta: # Meta data fields. Just like fields, but without any preview element
+      - {label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD hh:mm:ss"}
 
 
