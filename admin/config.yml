@@ -6,7 +6,7 @@ backend:
 media_folder: "/img/uploads" # Media files will be stored in the repo under images/uploads
 
 collections:
-  - name: "portfolio"
+  - name: "post"
     label: "Item Portfolio"
     folder: "_posts"
     create: true # Allow users to create new documents in this collection
